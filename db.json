@@ -1,0 +1,36 @@
+{
+  "veggies": [
+    {
+      "id": 1,
+      "name": "omena",
+      "carbohydrate": 19.6540234806016,
+      "alcohol": 0.0,
+      "sugarAlcohol": 0.0,
+      "protein": 1.67796879215166,
+      "energy": 650.346320927143,
+      "fiber": 2.31718746758997,
+      "organicAcids": 0.326250002835877,
+      "salt": 110.575017293915,
+      "saturatedFat": 3.42992428103025,
+      "sugar": 13.1548046981915,
+      "fat": 7.16062509518815,
+      "energyKcal": 155.3696595458796
+    },
+    {
+      "id": 2,
+      "name": "porkkana",
+      "carbohydrate": 5.55999994277954,
+      "alcohol": 0.0,
+      "sugarAlcohol": 0.0,
+      "protein": 0.625,
+      "energy": 136.845001220703,
+      "fiber": 2.54999995231628,
+      "organicAcids": 0.300000011920929,
+      "salt": 63.7000007629395,
+      "saturatedFat": 0.0337000004947186,
+      "sugar": 5.3600001335144,
+      "fat": 0.200000002980232,
+      "energyKcal": 32.69267552694897
+    }
+  ]
+}
