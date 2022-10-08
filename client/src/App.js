@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "./components/Button";
+import Header from "./components/Header"
+import Cards from "./components/Cards";
 
 function App() {
   const [vegSelected, setVegSelected] = useState(false) ;
@@ -20,11 +22,17 @@ function App() {
     return data
   }
 
+  const onSelect = (id) => {
+    if (!vegSelected) setVeggies(veggies.filter((veggie) => veggie.id === id));
+    setVegSelected(!vegSelected)
+  }
+
   console.log(veggies)
 
   return (
-    <div className="Container"> 
-      {!vegSelected && <Button text={'Select'} onClick={()=> setVegSelected(!vegSelected)} />}
+    <div className="Container">
+      <Header></Header>
+      <Cards veggies={veggies} onSelect={onSelect}/>
     </div>
   )
 }
