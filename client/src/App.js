@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Button from "./components/Button";
 import Header from "./components/Header"
 import Cards from "./components/Cards";
+import './App.css';
 
 function App() {
   const [vegSelected, setVegSelected] = useState(false) ;
@@ -23,7 +23,15 @@ function App() {
   }
 
   const onSelect = (id) => {
-    if (!vegSelected) setVeggies(veggies.filter((veggie) => veggie.id === id));
+    if (!vegSelected) {
+      setVeggies(veggies.filter((veggie) => veggie.id === id))
+    } else {
+      const getVeggies = async () => {
+        const vegsFromServer = await fetchVeggies()
+        setVeggies(vegsFromServer)
+      }
+      getVeggies()
+    }
     setVegSelected(!vegSelected)
   }
 
