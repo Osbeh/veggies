@@ -1,39 +1,23 @@
-.App {
-  text-align: center;
-  background-color: black;
+.header {
+  margin-left:1rem;
+  text-transform: uppercase;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cards {
+  margin-left:3rem;
+  display:flex;
+  gap: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.vegCard {
+  width: 10rem;
+  height: 20rem;
+  background-color: #eddba6;
+  border: 1px solid black;
+  border-radius: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.vegCard>h3 {
+  text-transform: uppercase;
+  text-align:center;
 }
