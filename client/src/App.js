@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header"
 import Cards from "./components/Cards";
+import AddVeggie from "./components/AddVeggie"
+import Card from "./components/Card";
+import Opponent from "./components/Opponent";
 import './App.css';
 
 function App() {
   const [vegSelected, setVegSelected] = useState(false) ;
   const [veggies, setVeggies] = useState([])
+  const [player, setPlayer] = useState({})
+  const [enemy, setEnemy] = useState({})
+  const [admin, setAdmin] = useState(false)
 
   useEffect(() => {
     const getVeggies = async () => {
@@ -24,7 +30,8 @@ function App() {
 
   const onSelect = (id) => {
     if (!vegSelected) {
-      setVeggies(veggies.filter((veggie) => veggie.id === id))
+      setPlayer(veggies.filter((veggie) => veggie.id === id)[0])
+      setVeggies(veggies.filter((veggie) => veggie.id !== id))
     } else {
       const getVeggies = async () => {
         const vegsFromServer = await fetchVeggies()
@@ -35,12 +42,23 @@ function App() {
     setVegSelected(!vegSelected)
   }
 
+  const selectEnemy = (id) => {
+    setEnemy(veggies.filter((veggie) => veggie.id === id)[0])
+    setVeggies(veggies.filter((veggie) => veggie.id !== id))
+  }
+
+  const addVeggie = async (veggie) => {
+    console.log(veggie)
+  }
+
   console.log(veggies)
 
   return (
     <div className="Container">
       <Header></Header>
-      <Cards veggies={veggies} onSelect={onSelect}/>
+      {/* {vegSelected ? <Card veggie={player} onSelect={onSelect}/> : <Cards veggies={veggies} onSelect={onSelect}/>} */}
+      {vegSelected ? <Opponent player={player} enemies={veggies} onSelect={onSelect} selectEnemy={selectEnemy}/>:<Cards veggies={veggies} onSelect={onSelect}/>}
+      {admin && <AddVeggie onAdd={addVeggie}/>}
     </div>
   )
 }

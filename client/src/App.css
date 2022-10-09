@@ -7,6 +7,7 @@
   margin-left:3rem;
   display:flex;
   gap: 1rem;
+  flex-wrap:wrap;
 }
 
 .vegCard {
