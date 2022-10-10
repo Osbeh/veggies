@@ -51,13 +51,13 @@ function App() {
     console.log(veggie)
   }
 
-  console.log(veggies)
+  // console.log(veggies)
 
   return (
     <div className="Container">
       <Header></Header>
       {/* {vegSelected ? <Card veggie={player} onSelect={onSelect}/> : <Cards veggies={veggies} onSelect={onSelect}/>} */}
-      {vegSelected ? <Opponent player={player} enemies={veggies} onSelect={onSelect} selectEnemy={selectEnemy}/>:<Cards veggies={veggies} onSelect={onSelect}/>}
+      {vegSelected ? <Opponent player={player} enemies={veggies} enemy={enemy} onSelect={onSelect} selectEnemy={selectEnemy}/>:<Cards veggies={veggies} onSelect={onSelect}/>}
       {admin && <AddVeggie onAdd={addVeggie}/>}
     </div>
   )
