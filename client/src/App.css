@@ -22,3 +22,8 @@
   text-transform: uppercase;
   text-align:center;
 }
+
+.gameDiv {
+  display: flex;
+  gap: 5rem;
+}

@@ -1,7 +1,7 @@
 import Card from './Card'
 
-export default function Cards({ veggies, enemies,  onSelect, selectEnemy }) {
-    if (veggies) {
+export default function Cards({ veggies, onSelect }) {
+    // if (veggies) {
         return (
             <div className={'cards'}>
                 {veggies.map((veggie) => (
@@ -9,14 +9,14 @@ export default function Cards({ veggies, enemies,  onSelect, selectEnemy }) {
                 ) )}
             </div>
         )
-    }
-    if (enemies) {
-        return (
-            <div className={'cards'}>
-                {enemies.map((enemy) => (
-                    <Card key={enemy.id} enemy={enemy} selectEnemy={selectEnemy}/>
-                ) )}
-            </div>
-        )
-    }
+    // }
+    // if (enemies) {
+    //     return (
+    //         <div className={'cards'}>
+    //             {enemies.map((enemy) => (
+    //                 <Card key={enemy.id} enemy={enemy} selectEnemy={selectEnemy}/>
+    //             ) )}
+    //         </div>
+    //     )
+    // }
 }

@@ -5,12 +5,14 @@ import AddVeggie from "./components/AddVeggie"
 import Card from "./components/Card";
 import Opponent from "./components/Opponent";
 import './App.css';
+import Game from "./components/Game"
 
 function App() {
   const [vegSelected, setVegSelected] = useState(false) ;
   const [veggies, setVeggies] = useState([])
   const [player, setPlayer] = useState({})
   const [enemy, setEnemy] = useState({})
+  const [enemySelected, setEnemySelected] = useState(false)
   const [admin, setAdmin] = useState(false)
 
   useEffect(() => {
@@ -43,21 +45,34 @@ function App() {
   }
 
   const selectEnemy = (id) => {
-    setEnemy(veggies.filter((veggie) => veggie.id === id)[0])
-    setVeggies(veggies.filter((veggie) => veggie.id !== id))
+    if (!enemySelected) {
+      setEnemy(veggies.filter((veggie) => veggie.id === id)[0])
+      setVeggies(veggies.filter((veggie) => veggie.id !== id))
+    } else {
+      setVeggies(...veggies, enemy)
+      setEnemy({})
+    }
+    setEnemySelected(!enemySelected)
   }
 
   const addVeggie = async (veggie) => {
     console.log(veggie)
   }
 
-  // console.log(veggies)
+  console.log(veggies)
+  console.log(enemySelected)
+
+  // if (!vegSelected) {
+  //   return (
+  //     <Cards veggies={veggies} onSelect={onSelect}/>
+  //   )
+  // }
 
   return (
     <div className="Container">
       <Header></Header>
-      {/* {vegSelected ? <Card veggie={player} onSelect={onSelect}/> : <Cards veggies={veggies} onSelect={onSelect}/>} */}
-      {vegSelected ? <Opponent player={player} enemies={veggies} enemy={enemy} onSelect={onSelect} selectEnemy={selectEnemy}/>:<Cards veggies={veggies} onSelect={onSelect}/>}
+      <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} ></Game>
+      
       {admin && <AddVeggie onAdd={addVeggie}/>}
     </div>
   )
