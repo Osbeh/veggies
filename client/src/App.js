@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header"
-import Cards from "./components/Cards";
 import AddVeggie from "./components/AddVeggie"
-import Card from "./components/Card";
-import Opponent from "./components/Opponent";
+import Action from "./components/Action";
 import './App.css';
 import Game from "./components/Game"
 
@@ -14,6 +12,8 @@ function App() {
   const [enemy, setEnemy] = useState({})
   const [enemySelected, setEnemySelected] = useState(false)
   const [admin, setAdmin] = useState(false)
+  const [gameReady, setGameReady] = useState(false)
+  const [gameFinished, setGameFinished] = useState(false)
 
   useEffect(() => {
     const getVeggies = async () => {
@@ -55,6 +55,12 @@ function App() {
     setEnemySelected(!enemySelected)
   }
 
+  const setGame = () => {
+    setGameReady(!gameReady)
+  }
+
+  const gameEnded = () => setGameFinished(!gameFinished)
+
   const addVeggie = async (veggie) => {
     console.log(veggie)
   }
@@ -71,7 +77,9 @@ function App() {
   return (
     <div className="Container">
       <Header></Header>
-      <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} ></Game>
+      {!gameReady ? <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} setGame={setGame} gameReady={gameReady}></Game>
+      :  <Action player={player} enemy={enemy} gameFinished={gameFinished} gameEnded={gameEnded}></Action>
+    }
       
       {admin && <AddVeggie onAdd={addVeggie}/>}
     </div>
