@@ -13,7 +13,7 @@ function App() {
   const [enemySelected, setEnemySelected] = useState(false)
   const [admin, setAdmin] = useState(false)
   const [gameReady, setGameReady] = useState(false)
-  const [gameFinished, setGameFinished] = useState(false)
+  // const [gameFinished, setGameFinished] = useState(false)
 
   useEffect(() => {
     const getVeggies = async () => {
@@ -59,7 +59,7 @@ function App() {
     setGameReady(!gameReady)
   }
 
-  const gameEnded = () => setGameFinished(!gameFinished)
+  // const gameEnded = () => setGameFinished(!gameFinished)
 
   const addVeggie = async (veggie) => {
     console.log(veggie)
@@ -78,7 +78,7 @@ function App() {
     <div className="Container">
       <Header></Header>
       {!gameReady ? <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} setGame={setGame} gameReady={gameReady}></Game>
-      :  <Action player={player} enemy={enemy} gameFinished={gameFinished} gameEnded={gameEnded}></Action>
+      :  <Action player={player} enemy={enemy} ></Action>
     }
       
       {admin && <AddVeggie onAdd={addVeggie}/>}

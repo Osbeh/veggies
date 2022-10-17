@@ -1,55 +1,50 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import useInterval from 'react-useinterval'
 
-export default function Action ({player, enemy, gameFinished, gameEnded }) {
+export default function Action ({player, enemy }) {
 
-    const [playerHealth, setPlayerHealth] = useState(player.energyKcal)
+    // const [playerHealth, setPlayerHealth] = useState(player.energyKcal)
     const [enemyHealth, setEnemyHealth] = useState(enemy.energyKcal)
-
+    const [playerHealth, setPlayerHealth] = useState(100)
+    //const [enemyHealth, setEnemyHealth] = useState(100)
+    const [gameFinished, setGameFinished] = useState(false)
 
 
     // const plAction = () => {
-    let attackTimer = player.fat*10000
+    const playerAttackTimer = player.fat*10000
+    const enemyAttackTimer = enemy.fat*10000
         
-    //     // const map = {}
+    //const playerAttack = player.carbohydrate
+    //const enemyAttack = enemy.carbohydrate
 
-    //     const attackEnemy = () => {
-    //         if (enemyHealth > 0) {
-    //             // let newEnemyHealth = enemyHealth - player.carbohydrate
-    //             setEnemyHealth(enemyHealth - 5)
-    //             console.log(enemyHealth)
-    //         } else {
-    //             console.log("enemy dead")
-    //             clearInterval(intervalId)
-    //             gameEnded()
-    //         }
-    //     }
 
-    //     let intervalId = gameFinished ? null: setInterval(attackEnemy, attackTimer)
-    //     // map.interval = setInterval(attackEnemy, attackTimer)
-    // }
-    function plAction() {
-        if (enemyHealth > 0) {
-            setTimeout(() => {
-                setEnemyHealth(enemyHealth - 5)
-            }, attackTimer)
+    const playerAttack = playerAttack => {
+        if (enemyHealth < 0 ) {
+            setGameFinished(true)
         } else {
-            gameEnded()
+            setEnemyHealth(enemyHealth - playerAttack);
+        }
+    };
+
+    const enemyAttack = enemyAttack => {
+        if (playerHealth < 0 ) {
+            setGameFinished(true)
+        } else {
+            setPlayerHealth(playerHealth - enemyAttack)
         }
     }
 
-    if (!gameFinished) {
-        plAction()
-    } else {
+    useInterval(playerAttack, gameFinished? null : playerAttackTimer, player.carbohydrate);
 
-    }
-
+    useInterval(enemyAttack, gameFinished? null : enemyAttackTimer, enemy.carbohydrate )
     
-    // console.log(playerHealth, enemyHealth)
+     
     return (
+
         <div>
             Game happens now 
-            <p>Player Health: {playerHealth}</p>
-            <p>Enemy Health: {enemyHealth}</p>
+           <div> <p>Player Health: {playerHealth}</p> <p>Enemy Health: {enemyHealth}</p> </div>
+           {gameFinished && playerHealth < 0 ? 'You loose' : 'You Win'}
         </div>
     )
 }
