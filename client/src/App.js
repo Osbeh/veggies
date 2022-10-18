@@ -4,6 +4,7 @@ import AddVeggie from "./components/AddVeggie"
 import Action from "./components/Action";
 import './App.css';
 import Game from "./components/Game"
+import Footer from "./components/Footer";
 
 function App() {
   const [vegSelected, setVegSelected] = useState(false) ;
@@ -13,6 +14,7 @@ function App() {
   const [enemySelected, setEnemySelected] = useState(false)
   const [admin, setAdmin] = useState(false)
   const [gameReady, setGameReady] = useState(false)
+  const [defeatedEnemies, setDefeatedEnemies] = useState([])
   // const [gameFinished, setGameFinished] = useState(false)
 
   useEffect(() => {
@@ -34,6 +36,7 @@ function App() {
     if (!vegSelected) {
       setPlayer(veggies.filter((veggie) => veggie.id === id)[0])
       setVeggies(veggies.filter((veggie) => veggie.id !== id))
+      setDefeatedEnemies([])
     } else {
       const getVeggies = async () => {
         const vegsFromServer = await fetchVeggies()
@@ -65,22 +68,34 @@ function App() {
     console.log(veggie)
   }
 
-  console.log(veggies)
-  console.log(enemySelected)
 
-  // if (!vegSelected) {
-  //   return (
-  //     <Cards veggies={veggies} onSelect={onSelect}/>
-  //   )
-  // }
+  const resetGame = (winner) => {
+    
+    setEnemySelected(false)
+    setGameReady(false)
+    if (player.id !== winner.id) {
+      setVegSelected(false)
+      const getVeggies = async () => {
+        const vegsFromServer = await fetchVeggies()
+        setVeggies(vegsFromServer)
+      }
+      getVeggies()
+      setEnemy({})
+      setDefeatedEnemies([])
+    } else {
+      setDefeatedEnemies([...defeatedEnemies, enemy])
+      setEnemy({})
+    }
+    
+  }
 
   return (
     <div className="Container">
       <Header></Header>
       {!gameReady ? <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} setGame={setGame} gameReady={gameReady}></Game>
-      :  <Action player={player} enemy={enemy} ></Action>
+      :  <Action player={player} enemy={enemy} resetGame={resetGame}></Action>
     }
-      
+      <Footer defeatedEnemies={defeatedEnemies}></Footer>
       {admin && <AddVeggie onAdd={addVeggie}/>}
     </div>
   )
