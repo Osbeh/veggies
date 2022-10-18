@@ -1,6 +1,14 @@
 .header {
   margin-left:1rem;
   text-transform: uppercase;
+  text-align: center;
+  color:wheat;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+}
+
+body {
+  background-color: rgb(56, 56, 61);
 }
 
 .cards {
@@ -11,7 +19,7 @@
 }
 
 .vegCard {
-  width: 10rem;
+  min-width: 10rem;
   height: 20rem;
   background-color: #eddba6;
   border: 1px solid black;
@@ -26,4 +34,28 @@
 .gameDiv {
   display: flex;
   gap: 5rem;
+  margin-left: 2rem;
+}
+
+.gameDiv>button {
+  font-size:1rem;
+  border-radius: 20px;
+  align-self:center;
+  height:5rem;
+  width:10rem;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+button {
+  background-color: #35494f;
+  color:white;
+  border:1px solid black;
+}
+
+.defeated {
+  color:red;
+  text-decoration: line-through;
 }

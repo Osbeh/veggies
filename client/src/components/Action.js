@@ -1,50 +1,61 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import useInterval from 'react-useinterval'
 
-export default function Action ({player, enemy }) {
+export default function Action ({ player, enemy, resetGame }) {
 
-    // const [playerHealth, setPlayerHealth] = useState(player.energyKcal)
     const [enemyHealth, setEnemyHealth] = useState(enemy.energyKcal)
-    const [playerHealth, setPlayerHealth] = useState(100)
-    //const [enemyHealth, setEnemyHealth] = useState(100)
+    const [playerHealth, setPlayerHealth] = useState(player.energyKcal)
     const [gameFinished, setGameFinished] = useState(false)
+    const [winner, setWinner] = useState({})
 
-
-    // const plAction = () => {
-    const playerAttackTimer = player.fat*10000
-    const enemyAttackTimer = enemy.fat*10000
+    const playerAttackTimer = (player.fat + player.protein + player.carbohydrate)*100
+    const enemyAttackTimer = (enemy.fat + enemy.protein + enemy.carbohydrate)*100
         
-    //const playerAttack = player.carbohydrate
-    //const enemyAttack = enemy.carbohydrate
-
-
-    const playerAttack = playerAttack => {
-        if (enemyHealth < 0 ) {
+    const playerAttack = () => {
+        let playerDamage = player.carbohydrate * (Math.random()+0.5)
+        console.log(`${player.name} hits for ${playerDamage}`)
+        let enemyDef = Math.random() * enemy.protein
+        console.log(`${enemy.name} blocks ${enemyDef} damage`)
+        let totalDmg = playerDamage - enemyDef
+        if (totalDmg < 0 ) totalDmg = 0.1
+        if (totalDmg > enemyHealth) {
+            setEnemyHealth(0)
             setGameFinished(true)
+            setWinner(player)
         } else {
-            setEnemyHealth(enemyHealth - playerAttack);
+            setEnemyHealth(enemyHealth - totalDmg);
         }
     };
 
-    const enemyAttack = enemyAttack => {
-        if (playerHealth < 0 ) {
+    const enemyAttack = () => {
+        let enemyDamage = enemy.carbohydrate * (Math.random() +0.5)
+        console.log(`${enemy.name} hits for ${enemyDamage}`)
+        let playerDef = Math.random() * enemy.protein;
+        console.log(`${player.name} blocks ${playerDef} damage`)
+        let totalDmg = enemyDamage - playerDef
+        if (totalDmg < 0 ) totalDmg = 0.1
+        if (totalDmg > playerHealth) {
+            setPlayerHealth(0)
             setGameFinished(true)
+            setWinner(enemy)
         } else {
-            setPlayerHealth(playerHealth - enemyAttack)
+            setPlayerHealth(playerHealth - totalDmg)
         }
     }
 
-    useInterval(playerAttack, gameFinished? null : playerAttackTimer, player.carbohydrate);
+    useInterval(playerAttack, gameFinished? null : playerAttackTimer);
 
-    useInterval(enemyAttack, gameFinished? null : enemyAttackTimer, enemy.carbohydrate )
+    useInterval(enemyAttack, gameFinished? null : enemyAttackTimer);
     
      
     return (
 
-        <div>
+        <div className='action'>
             Game happens now 
            <div> <p>Player Health: {playerHealth}</p> <p>Enemy Health: {enemyHealth}</p> </div>
-           {gameFinished && playerHealth < 0 ? 'You loose' : 'You Win'}
+           {winner.name && <div><p>{winner.name} wins!</p> 
+                <button onClick={() => resetGame(winner)}>Continue</button>
+           </div>}
         </div>
     )
 }

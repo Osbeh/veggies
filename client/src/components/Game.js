@@ -1,8 +1,5 @@
 import Cards from "./Cards";
 import Card from "./Card";
-import { useState } from "react";
-
-
 
 export default function Game({ veggies, vegSelected, player, onSelect, enemySelected, enemy, selectEnemy, setGame, gameReady}) {
 
@@ -15,22 +12,19 @@ export default function Game({ veggies, vegSelected, player, onSelect, enemySele
     } else {
         if (!enemySelected) {
             return (
-                <>
+                <div className={'gameDiv'}>
                     <Card veggie={player} onSelect={onSelect}/>
-                    <p>Select Enemy</p>
+                    <p style={{color:'white'}}>Select Enemy</p>
                     <Cards veggies={veggies} onSelect={selectEnemy}/>
-                </>
+                </div>
             )
         } else {
-            // if (!gameReady) {
-            //     setGame()
-            // }
             return (
                 <div className={'gameDiv'}>
                     <Card veggie={player} onSelect={onSelect}/>
-                    <p>VERSUS</p>
+                    <p style={{color:'white', alignSelf:'center'}}>VERSUS</p>
                     <Card veggie={enemy}/>
-                    <button onClick={setGame}>Start Game</button>
+                    <button onClick={setGame}>Start Match</button>
                 </div>
             )
         }
