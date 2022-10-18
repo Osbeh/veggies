@@ -7,6 +7,7 @@ export default function Action ({ player, enemy, resetGame }) {
     const [playerHealth, setPlayerHealth] = useState(player.energyKcal)
     const [gameFinished, setGameFinished] = useState(false)
     const [winner, setWinner] = useState({})
+    //TODO: CREATE A NEW STATE FOR ACTION LOG
 
     const playerAttackTimer = (player.fat + player.protein + player.carbohydrate)*100
     const enemyAttackTimer = (enemy.fat + enemy.protein + enemy.carbohydrate)*100
@@ -54,8 +55,9 @@ export default function Action ({ player, enemy, resetGame }) {
             Game happens now 
            <div> <p>Player Health: {playerHealth}</p> <p>Enemy Health: {enemyHealth}</p> </div>
            {winner.name && <div><p>{winner.name} wins!</p> 
-                <button onClick={() => resetGame(winner)}>Continue</button>
+                <button onClick={() => resetGame(winner)}>{winner.id === player.id ? 'Continue' : 'Restart'}</button>
            </div>}
+           <div className='actionLog'></div>
         </div>
     )
 }
