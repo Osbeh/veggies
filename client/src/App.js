@@ -23,7 +23,6 @@ function App() {
       setVeggies(vegsFromServer)
     }
     getVeggies()
-    
   }, [])
 
   const fetchVeggies = async () => {

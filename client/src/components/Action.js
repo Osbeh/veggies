@@ -1,5 +1,6 @@
 import { useState } from "react"
 import useInterval from 'react-useinterval'
+import HealthBar from "./HealthBar"
 
 export default function Action ({ player, enemy, resetGame }) {
 
@@ -53,9 +54,11 @@ export default function Action ({ player, enemy, resetGame }) {
 
         <div className='action'>
             <h3 className='matchHeader'>{gameFinished ? 'Fight end' : 'Fight!'}</h3>
-           <div className='healthBars'> 
-                <p>Player Health: {Math.round(playerHealth * 10) / 10}</p> <progress value={playerHealth} max={player.energyKcal}></progress>
-                <p>Enemy Health: {Math.round(enemyHealth * 10) / 10}</p> <progress value={enemyHealth} max={enemy.energyKcal}></progress>
+           <div className='healthBars'>
+                <HealthBar vegName={player.name} currentHealth={playerHealth} maxHealth={player.energyKcal}/>
+                <HealthBar vegName={enemy.name} currentHealth={enemyHealth} maxHealth={enemy.energyKcal}/>
+                {/* <p>Player Health: {Math.round(playerHealth * 10) / 10}</p> <progress value={playerHealth} max={player.energyKcal}></progress> */}
+                {/* <p>Enemy Health: {Math.round(enemyHealth * 10) / 10}</p> <progress value={enemyHealth} max={enemy.energyKcal}></progress> */}
             </div>
            {winner.name && <div className='winnerDiv'><p>{winner.name} wins!</p> 
                 <button onClick={() => resetGame(winner)}>{winner.id === player.id ? 'Continue' : 'Restart'}</button>
