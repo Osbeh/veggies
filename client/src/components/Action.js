@@ -52,9 +52,12 @@ export default function Action ({ player, enemy, resetGame }) {
     return (
 
         <div className='action'>
-            Game happens now 
-           <div> <p>Player Health: {playerHealth}</p> <p>Enemy Health: {enemyHealth}</p> </div>
-           {winner.name && <div><p>{winner.name} wins!</p> 
+            <h3 className='matchHeader'>{gameFinished ? 'Fight end' : 'Fight!'}</h3>
+           <div className='healthBars'> 
+                <p>Player Health: {Math.round(playerHealth * 10) / 10}</p> <progress value={playerHealth} max={player.energyKcal}></progress>
+                <p>Enemy Health: {Math.round(enemyHealth * 10) / 10}</p> <progress value={enemyHealth} max={enemy.energyKcal}></progress>
+            </div>
+           {winner.name && <div className='winnerDiv'><p>{winner.name} wins!</p> 
                 <button onClick={() => resetGame(winner)}>{winner.id === player.id ? 'Continue' : 'Restart'}</button>
            </div>}
            <div className='actionLog'></div>

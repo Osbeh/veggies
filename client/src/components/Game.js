@@ -1,9 +1,7 @@
 import Cards from "./Cards";
 import Card from "./Card";
 
-export default function Game({ veggies, vegSelected, player, onSelect, enemySelected, enemy, selectEnemy, setGame, gameReady}) {
-
-    // const [gameReady, setGameReady] = useState(false)
+export default function Game({ veggies, vegSelected, player, onSelect, enemySelected, enemy, selectEnemy, setGame}) {
 
     if (!vegSelected) {
         return (

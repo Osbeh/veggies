@@ -34,7 +34,7 @@ body {
 .gameDiv {
   display: flex;
   gap: 5rem;
-  margin-left: 2rem;
+  justify-content: center;
 }
 
 .gameDiv>button {
@@ -58,4 +58,51 @@ button {
 .defeated {
   color:red;
   text-decoration: line-through;
+}
+
+.healthBars {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: white;
+  justify-content: center;
+}
+
+progress {
+  appearance:none;
+  width:15rem;
+  height:1.5rem;
+}
+
+progress::-webkit-progress-bar {
+  background-color: red;
+}
+
+progress::-moz-progress-bar {
+  background-color: red;
+}
+
+.winnerDiv {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  margin: auto;
+  align-items: center;
+}
+
+.winnerDiv>button {
+  width: 8rem;
+  height: 2rem;
+  border-radius: 10px;
+}
+
+.winnerDiv>p{
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.matchHeader {
+  color:white;
+  text-align: center;
 }
