@@ -62,7 +62,7 @@ button {
 
 .healthBars {
   display: flex;
-  gap: 1rem;
+  gap: 10rem;
   align-items: center;
   color: white;
   justify-content: center;
@@ -105,4 +105,11 @@ progress::-moz-progress-bar {
 .matchHeader {
   color:white;
   text-align: center;
+}
+
+.healthbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-transform: uppercase;
 }
