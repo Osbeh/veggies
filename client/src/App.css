@@ -113,3 +113,18 @@ progress::-moz-progress-bar {
   gap: 0.5rem;
   text-transform: uppercase;
 }
+
+.actionLog {
+  max-height: 25rem;
+  overflow: scroll;
+  float: right;
+  min-width: 25rem;
+  max-width: 35rem;
+  margin-left: 2rem;
+  background-color: darkgray;
+  opacity: 15%;
+  border-radius: 25px;
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  margin-right: 2rem;
+}
