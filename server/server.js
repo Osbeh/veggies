@@ -3,8 +3,11 @@ const app = express()
 import { insertMongo } from './insertMongo.js'
 const port = 4000
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
+app.get('/', async (req, res) => {
+    // res.send('Hello World');
+    console.log(req.query)
+    const mongoRes = insertMongo(req.query)
+    res.send({body:'Success'})
 });
 
 app.listen(port, () => console.log("listeninig on port ", port))
