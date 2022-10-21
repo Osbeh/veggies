@@ -12,7 +12,7 @@ function App() {
   const [player, setPlayer] = useState({})
   const [enemy, setEnemy] = useState({})
   const [enemySelected, setEnemySelected] = useState(false)
-  const [admin, setAdmin] = useState(false)
+  const [admin, setAdmin] = useState(true)
   const [gameReady, setGameReady] = useState(false)
   const [defeatedEnemies, setDefeatedEnemies] = useState([])
   // const [gameFinished, setGameFinished] = useState(false)
@@ -65,6 +65,11 @@ function App() {
 
   const addVeggie = async (veggie) => {
     console.log(veggie)
+    const res = await fetch(`http://localhost:4000/?id=${veggie.vegId}&type=${veggie.vegType}`, {
+      method: 'GET',
+      mode: 'no-cors'
+    })
+    console.log(res)
   }
 
 
