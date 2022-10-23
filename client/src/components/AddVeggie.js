@@ -11,17 +11,17 @@ export default function AddTask({ onAdd }) {
         {value: 'vegetables', text: 'Vihannes'},
     ];
 
-    const [selected, setSelected] = useState(options[0].value);
+    const [vegType, setVegType] = useState(options[0].value);
 
     const handleChange = event => {
         console.log(event.target.value);
-        setSelected(event.target.value);
+        setVegType(event.target.value);
     };
 
 
     const onSubmit = (e) => {
         e.preventDefault()
-        if(selected === '') {
+        if(vegType === '') {
             alert('Please add veggie type')
             return;
         }
@@ -30,7 +30,7 @@ export default function AddTask({ onAdd }) {
             return;
         }
 
-        onAdd({ vegId, selected })
+        onAdd({ vegId, vegType })
 
         setVegId('')
     }
@@ -39,7 +39,7 @@ export default function AddTask({ onAdd }) {
         <form className="add-form" onSubmit={onSubmit}>
             <input type="text" placeholder="Veggie ID" value={vegId} onChange={(e) => setVegId(e.target.value)}/>
             {/* <input type="text" placeholder="Veggie type" value={vegType} onChange={(e) => setVegType(e.target.value)}/> */}
-            <select value={selected} onChange={handleChange}>
+            <select value={vegType} onChange={handleChange}>
                 {options.map(option => (
                 <option key={option.value} value={option.value}>
                     {option.text}
