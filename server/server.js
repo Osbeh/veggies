@@ -1,14 +1,28 @@
-import express from 'express';
+// import express from 'express';
+// import mongoose from 'mongoose'
+const express = require('express')
+const mongoose = require('mongoose')
 const app = express()
-import { insertMongo } from './insertMongo.js'
+// import { insertMongo } from './insertMongo.js'
+// import fruitsRouter from './routes/fruits'
 const port = 4000
 
-app.get('/', async (req, res) => {
-    // res.send('Hello World');
-    console.log(req.query)
-    const mongoRes = insertMongo(req.query)
-    res.send({body:'Success'})
-});
+mongoose.connect('mongodb://0.0.0.0:27017', {useNewUrlParser: true})
+const db = mongoose.connection
+db.on('error', (error) => console.error(error))
+db.once('open', () => console.log('Connected to database'))
+
+app.use(express.json())
+
+const fruitsRouter = require('./routes/fruits')
+app.use('/fruits', fruitsRouter)
+
+// app.get('/', async (req, res) => {
+//     // res.send('Hello World');
+//    // console.log(req.query)
+//     const mongoRes = insertMongo(req.query)
+//     res.send({mongoRes})
+// });
 
 app.listen(port, () => console.log("listeninig on port ", port))
 
