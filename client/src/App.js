@@ -7,6 +7,7 @@ import Game from "./components/Game"
 import Footer from "./components/Footer";
 
 function App() {
+  // const [vegType, setVegType] = useState('')
   const [vegSelected, setVegSelected] = useState(false) ;
   const [veggies, setVeggies] = useState([])
   const [player, setPlayer] = useState({})
@@ -15,20 +16,43 @@ function App() {
   const [admin, setAdmin] = useState(true)
   const [gameReady, setGameReady] = useState(false)
   const [defeatedEnemies, setDefeatedEnemies] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [err, setErr] = useState(false)
   // const [gameFinished, setGameFinished] = useState(false)
 
   useEffect(() => {
     const getVeggies = async () => {
-      const vegsFromServer = await fetchVeggies()
-      setVeggies(vegsFromServer)
+      try {
+        const vegsFromServer = await fetchVeggies()
+        if (vegsFromServer) {
+          setVeggies(vegsFromServer)
+          setErr(false)
+        } else {
+          setErr(true)
+        }
+        setLoading(false)
+      } catch (err) {
+        console.error(err)
+        setErr(true)
+      }
     }
     getVeggies()
   }, [])
 
   const fetchVeggies = async () => {
-    const res = await fetch('http://localhost:5000/veggies')
-    const data = await res.json()
-    return data
+    //const res = await fetch('http://localhost:5000/veggies')
+    try {
+      const res = await fetch('http://localhost:4000/roots')
+      const data = await res.json()
+      return data
+    } catch (err) {
+      console.error('err', err)
+      return
+    }
+  }
+
+  if (loading) {
+    return <div>Loading...</div>
   }
 
   const onSelect = (id) => {
@@ -61,17 +85,6 @@ function App() {
     setGameReady(!gameReady)
   }
 
-  // const gameEnded = () => setGameFinished(!gameFinished)
-
-  const addVeggie = async (veggie) => {
-    console.log(veggie)
-    const res = await fetch(`http://localhost:4000/?id=${veggie.vegId}&type=${veggie.vegType}`, {
-      method: 'GET',
-      mode: 'no-cors'
-    })
-    console.log(res)
-  }
-
 
   const resetGame = (winner) => {
     
@@ -96,11 +109,12 @@ function App() {
   return (
     <div className="Container">
       <Header></Header>
+      {err && <div>Error Fetching data</div>}
       {!gameReady ? <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} setGame={setGame} gameReady={gameReady}></Game>
       :  <Action player={player} enemy={enemy} resetGame={resetGame}></Action>
     }
       <Footer defeatedEnemies={defeatedEnemies}></Footer>
-      {admin && <AddVeggie onAdd={addVeggie}/>}
+      {admin && <AddVeggie />}
     </div>
   )
 }

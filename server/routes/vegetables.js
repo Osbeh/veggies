@@ -2,13 +2,13 @@
 const express = require('express')
 const { collection } = require('../models/veg')
 const router = express.Router()
-const Fruit = require('../models/veg')
+const Vegetable = require('../models/veg')
 
 //Get all
 router.get('/', async (req,res) => {
     try {
-        const fruits = await Fruit.find({ vegType: 'fruit' })
-        res.json(fruits)
+        const vegetables = await Vegetable.find({ vegType: 'vegetable' })
+        res.json(vegetables)
     } catch (err){
         res.status(500).json({ message: err.message})
     }
@@ -20,19 +20,19 @@ router.get('/:id', (req,res) => {
 
 //create one
 router.post('/', async (req,res) => {
-    const fruit = new Fruit({
+    const vegetable = new Vegetable({
         name: req.body.name,
         id: req.body.id,
         energyKcal: req.body.energyKcal,
         protein: req.body.protein,
         fat: req.body.fat,
         carbohydrate: req.body.carbohydrate,
-        vegType: 'fruit'
+        vegType: 'vegetable'
     })
 
     try {
-        const newFruit = await fruit.save()
-        res.status(201).json(newFruit)
+        const newVegetable = await vegetable.save()
+        res.status(201).json(newVegetable)
     } catch (err) {
         res.status(400).json({message: err.message})
     }

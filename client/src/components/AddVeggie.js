@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function AddTask({ onAdd }) {
+export default function AddTask() {
     //const [vegType, setVegType] = useState('')
     const [vegId, setVegId] = useState('')
 
@@ -17,6 +17,12 @@ export default function AddTask({ onAdd }) {
         console.log(event.target.value);
         setVegType(event.target.value);
     };
+
+    const onAdd = async (veggie) => {
+        console.log(veggie)
+        const res = await fetch(`http://localhost:4000/addveg?id=${veggie.vegId}&type=${veggie.vegType}`)
+        console.log(res.status)
+    }
 
 
     const onSubmit = (e) => {
