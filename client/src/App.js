@@ -5,15 +5,16 @@ import Action from "./components/Action";
 import './App.css';
 import Game from "./components/Game"
 import Footer from "./components/Footer";
+import SelectVegType from "./components/SelectVegType";
 
 function App() {
-  // const [vegType, setVegType] = useState('')
+  const [vegType, setVegType] = useState()
   const [vegSelected, setVegSelected] = useState(false) ;
   const [veggies, setVeggies] = useState([])
   const [player, setPlayer] = useState({})
   const [enemy, setEnemy] = useState({})
   const [enemySelected, setEnemySelected] = useState(false)
-  const [admin, setAdmin] = useState(true)
+  const [admin, setAdmin] = useState(false)
   const [gameReady, setGameReady] = useState(false)
   const [defeatedEnemies, setDefeatedEnemies] = useState([])
   const [loading, setLoading] = useState(true)
@@ -23,7 +24,7 @@ function App() {
   useEffect(() => {
     const getVeggies = async () => {
       try {
-        const vegsFromServer = await fetchVeggies()
+        const vegsFromServer = await fetchVeggies(vegType||'vegetables')
         if (vegsFromServer) {
           setVeggies(vegsFromServer)
           setErr(false)
@@ -37,12 +38,12 @@ function App() {
       }
     }
     getVeggies()
-  }, [])
+  }, [vegType])
 
-  const fetchVeggies = async () => {
+  const fetchVeggies = async (vegType) => {
     //const res = await fetch('http://localhost:5000/veggies')
     try {
-      const res = await fetch('http://localhost:4000/roots')
+      const res = await fetch(`http://localhost:4000/${vegType}`)
       const data = await res.json()
       return data
     } catch (err) {
@@ -55,6 +56,23 @@ function App() {
     return <div>Loading...</div>
   }
 
+  const onTypeSelect = (type) => {
+    setVegType(type)
+  }
+
+  const onTypeChange = () => {
+    setVegType('')
+    setVegSelected(false)
+    setPlayer({})
+    setEnemy({})
+    setEnemySelected(false)
+    setGameReady(false)
+  }
+
+  const onAdmin = () => {
+    setAdmin(!admin)
+  }
+
   const onSelect = (id) => {
     if (!vegSelected) {
       setPlayer(veggies.filter((veggie) => veggie.id === id)[0])
@@ -62,7 +80,7 @@ function App() {
       setDefeatedEnemies([])
     } else {
       const getVeggies = async () => {
-        const vegsFromServer = await fetchVeggies()
+        const vegsFromServer = await fetchVeggies(vegType)
         setVeggies(vegsFromServer)
       }
       getVeggies()
@@ -93,7 +111,7 @@ function App() {
     if (player.id !== winner.id) {
       setVegSelected(false)
       const getVeggies = async () => {
-        const vegsFromServer = await fetchVeggies()
+        const vegsFromServer = await fetchVeggies(vegType)
         setVeggies(vegsFromServer)
       }
       getVeggies()
@@ -106,9 +124,15 @@ function App() {
     
   }
 
+  if (!vegType) {
+    return (
+      <SelectVegType onTypeSelect={onTypeSelect} onAdmin={onAdmin} admin={admin}/>
+    )
+  }
+
   return (
     <div className="Container">
-      <Header></Header>
+      <Header vegType={vegType} onTypeChange={onTypeChange} onAdmin={onAdmin}></Header>
       {err && <div>Error Fetching data</div>}
       {!gameReady ? <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} setGame={setGame} gameReady={gameReady}></Game>
       :  <Action player={player} enemy={enemy} resetGame={resetGame}></Action>

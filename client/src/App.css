@@ -128,3 +128,30 @@ progress::-moz-progress-bar {
   padding-left: 2rem;
   margin-right: 2rem;
 }
+
+.btn {
+  background-color: wheat;
+  color: black;
+  text-transform: uppercase;
+  width: 10rem;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+
+.selectVeg {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 5rem;
+}
+
+.controlDiv {
+  display: flex;
+  float: right;
+  gap: 1.5rem;
+  margin-top: -5rem;
+  margin-right: 2rem;
+}
