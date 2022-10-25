@@ -14,7 +14,7 @@ export default function AddTask() {
     const [vegType, setVegType] = useState(options[0].value);
 
     const handleChange = event => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setVegType(event.target.value);
     };
 
