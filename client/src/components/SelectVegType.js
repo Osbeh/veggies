@@ -13,11 +13,11 @@ export default function SelectVegType({ onTypeSelect, onAdmin, admin }) {
     return (
         <>
             <Header onAdmin={onAdmin}/>
-            <p style={{color:'white', textAlign:'center'}}>Select Vegetable Type:</p>
+            <p style={{color:'white', textAlign:'center'}}>Valitse vihannestyyppi:</p>
             <div className='selectVeg'>
-                <Button text={'fruits'} onClick={onClick}></Button>
-                <Button text={'vegetables'} onClick={onClick}/>
-                <Button text={'roots'} onClick={onClick}/>
+                <Button text={'Hedelmät'} type={'fruits'} onClick={onClick}></Button>
+                <Button text={'Kasvikset'} type={'vegetables'} onClick={onClick}/>
+                <Button text={'Juurekset'} type={'roots'} onClick={onClick}/>
             </div>
             {admin && <AddVeggie />}
         </>

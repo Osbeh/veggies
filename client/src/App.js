@@ -53,7 +53,7 @@ function App() {
   }
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Lataa...</div>
   }
 
   const onTypeSelect = (type) => {
@@ -67,6 +67,7 @@ function App() {
     setEnemy({})
     setEnemySelected(false)
     setGameReady(false)
+    setDefeatedEnemies([])
   }
 
   const onAdmin = () => {
@@ -103,6 +104,12 @@ function App() {
     setGameReady(!gameReady)
   }
 
+  const setBossEnemy = (boss) => {
+    setEnemy(boss)
+    setEnemySelected(true)
+    setGameReady(true)
+  }
+
 
   const resetGame = (winner) => {
     
@@ -124,6 +131,12 @@ function App() {
     
   }
 
+  if (err) {
+    return (
+      <div>Virhe haettaessa tietoja</div>
+    )
+  }
+
   if (!vegType) {
     return (
       <SelectVegType onTypeSelect={onTypeSelect} onAdmin={onAdmin} admin={admin}/>
@@ -133,11 +146,10 @@ function App() {
   return (
     <div className="Container">
       <Header vegType={vegType} onTypeChange={onTypeChange} onAdmin={onAdmin}></Header>
-      {err && <div>Error Fetching data</div>}
-      {!gameReady ? <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} setGame={setGame} gameReady={gameReady}></Game>
+      {!gameReady ? <Game veggies={veggies} vegSelected={vegSelected} player={player} onSelect={onSelect} enemySelected={enemySelected} enemy={enemy} selectEnemy={selectEnemy} setGame={setGame} gameReady={gameReady} setBossEnemy={setBossEnemy}></Game>
       :  <Action player={player} enemy={enemy} resetGame={resetGame}></Action>
     }
-      <Footer defeatedEnemies={defeatedEnemies}></Footer>
+      {defeatedEnemies.length >= 1 && <Footer defeatedEnemies={defeatedEnemies}></Footer>}
       {admin && <AddVeggie />}
     </div>
   )

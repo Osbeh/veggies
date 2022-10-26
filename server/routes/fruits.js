@@ -14,8 +14,13 @@ router.get('/', async (req,res) => {
     }
 })
 // Get one
-router.get('/:id', (req,res) => {
-    res.send(req.params.id)
+router.get('/:id', async (req,res) => {
+    try {
+        const boss = await Fruit.findOne({ id: req.params.id })
+        res.json(boss)
+    } catch(err) {
+        res.status(500).json({ meassage: err.message })
+    }
 })
 
 //create one

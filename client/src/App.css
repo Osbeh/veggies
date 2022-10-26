@@ -121,12 +121,12 @@ progress::-moz-progress-bar {
   min-width: 25rem;
   max-width: 35rem;
   margin-left: 2rem;
-  background-color: darkgray;
-  opacity: 15%;
+  background-color: rgba(0, 0, 0, 0.31);
   border-radius: 25px;
   padding-top: 0.5rem;
   padding-left: 2rem;
   margin-right: 2rem;
+  color:white;
 }
 
 .btn {
@@ -154,4 +154,26 @@ progress::-moz-progress-bar {
   gap: 1.5rem;
   margin-top: -5rem;
   margin-right: 2rem;
+}
+
+.finalBattlePrep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.gameEnd {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.btn-block {
+  width:auto;
+  height:auto;
+  border-radius: 0%;
 }

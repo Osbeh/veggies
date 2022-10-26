@@ -50,6 +50,14 @@ export default function Action ({ player, enemy, resetGame }) {
     useInterval(playerAttack, gameFinished? null : playerAttackTimer);
 
     useInterval(enemyAttack, gameFinished? null : enemyAttackTimer);
+
+    if (gameFinished && enemy.vegType === 'boss') {
+        return (
+            <div className='gameEnd'>
+                {winner.id === player.id ? <p>Onneksi olkoon, voitit pelin!</p>: <p>Päävastus oli liian kova pala purtavaksi.</p>}
+            </div>
+        )
+    }
     
      
     return (
@@ -62,8 +70,8 @@ export default function Action ({ player, enemy, resetGame }) {
                 {/* <p>Player Health: {Math.round(playerHealth * 10) / 10}</p> <progress value={playerHealth} max={player.energyKcal}></progress> */}
                 {/* <p>Enemy Health: {Math.round(enemyHealth * 10) / 10}</p> <progress value={enemyHealth} max={enemy.energyKcal}></progress> */}
             </div>
-            {winner.name && <div className='winnerDiv'><p>{winner.name} wins!</p> 
-                <button onClick={() => resetGame(winner)}>{winner.id === player.id ? 'Continue' : 'Restart'}</button>
+            {winner.name && <div className='winnerDiv'><p>{winner.name} voittaa!</p> 
+               {enemy.vegType !== 'boss' && <button onClick={() => resetGame(winner)}>{winner.id === player.id ? 'Jatka' : 'Yritä uudestaan'}</button>}
            </div>}
             <div className='actionLog'>
                 {/* <ActionLog log={actionLog}></ActionLog> */}

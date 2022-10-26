@@ -43,7 +43,7 @@ export default function AddTask() {
 
     return (
         <form className="add-form" onSubmit={onSubmit}>
-            <input type="text" placeholder="Veggie ID" value={vegId} onChange={(e) => setVegId(e.target.value)}/>
+            <input type="text" placeholder="Fineli ID" value={vegId} onChange={(e) => setVegId(e.target.value)}/>
             {/* <input type="text" placeholder="Veggie type" value={vegType} onChange={(e) => setVegType(e.target.value)}/> */}
             <select value={vegType} onChange={handleChange}>
                 {options.map(option => (
@@ -52,7 +52,7 @@ export default function AddTask() {
                 </option>
                 ))}
             </select>
-            <input type="submit" value="save veggie" className="btn btn-block"/>
+            <input type="submit" value="Tallenna" className="btn btn-block"/>
         </form>
     )
 }

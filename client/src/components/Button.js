@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
 
-export default function Button({ color, text, onClick }) {
+export default function Button({ color, text, onClick, type }) {
 
     // const handleClick = () => {
     //     console.log(this)
     // }
     
     return (
-        <button onClick={() => onClick(text)} style={{ backgroundColor:color }} className='btn'>{text}</button>
+        <button onClick={() => onClick(type)} style={{ backgroundColor:color }} className='btn'>{text}</button>
     )
 }
 
