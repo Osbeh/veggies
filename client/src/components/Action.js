@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { act } from "react-dom/test-utils"
 import useInterval from 'react-useinterval'
 import HealthBar from "./HealthBar"
 import ActionLog from "./ActionLog"
