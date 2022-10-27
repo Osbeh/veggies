@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
 
-const port = 4000
 require('dotenv').config();
 
 const atlasUri = process.env.MONGODB_URI
+const port = process.env.PORT || 4000
 
 mongoose.connect(atlasUri, {useNewUrlParser: true})
 const db = mongoose.connection
