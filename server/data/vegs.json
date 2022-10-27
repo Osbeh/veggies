@@ -1,0 +1,564 @@
+[{
+  "_id": {
+    "$oid": "6356be4444cf2f1338307a16"
+  },
+  "name": "Omena",
+  "id": 28941,
+  "energyKcal": 35.24593255028764,
+  "carbohydrate": 7.22970036506653,
+  "fat": 0.087000001296401,
+  "protein": 0.165299997925758,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356bf6744cf2f1338307a1a"
+  },
+  "name": "Kiivi",
+  "id": 28939,
+  "energyKcal": 48.01064629385923,
+  "carbohydrate": 6.52280014038086,
+  "fat": 0.767279992103577,
+  "protein": 0.736000010967255,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356bf7e44cf2f1338307a1c"
+  },
+  "name": "Mandariini",
+  "id": 28935,
+  "energyKcal": 36.3060813027825,
+  "carbohydrate": 6.64000015258789,
+  "fat": 0.240000009536743,
+  "protein": 0.45,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356bf9244cf2f1338307a1e"
+  },
+  "name": "Banaani",
+  "id": 28934,
+  "energyKcal": 58.65100782402527,
+  "carbohydrate": 12.2609994888305,
+  "fat": 0.268000003993511,
+  "protein": 0.80400003194809,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c23644cf2f1338307a22"
+  },
+  "name": "Hunajameloni",
+  "id": 28944,
+  "energyKcal": 18.501839479866263,
+  "carbohydrate": 3.90000009536743,
+  "fat": 0.0700000002980232,
+  "protein": 0.314999997615814,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c24444cf2f1338307a24"
+  },
+  "name": "Avokado",
+  "id": 28933,
+  "energyKcal": 140.64981811529265,
+  "carbohydrate": 0.546699986457825,
+  "fat": 13.7739997291564,
+  "protein": 1.86730008125305,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c24e44cf2f1338307a26"
+  },
+  "name": "Viinirypäle",
+  "id": 28932,
+  "energyKcal": 69.83492082676668,
+  "carbohydrate": 14.725,
+  "fat": 0.380000005662441,
+  "protein": 0.570000022649765,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c25544cf2f1338307a28"
+  },
+  "name": "Vesimeloni",
+  "id": 28931,
+  "energyKcal": 20.461082868600194,
+  "carbohydrate": 3.90499994754791,
+  "fat": 0.0825000032782555,
+  "protein": 0.500500014424324,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c26044cf2f1338307a2a"
+  },
+  "name": "Greippi",
+  "id": 28926,
+  "energyKcal": 22.850469691030337,
+  "carbohydrate": 4.225,
+  "fat": 0.195000007748604,
+  "protein": 0.409499996900558,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c26744cf2f1338307a2c"
+  },
+  "name": "Sitruuna",
+  "id": 28925,
+  "energyKcal": 21.387667165870415,
+  "carbohydrate": 1.43000003099442,
+  "fat": 0.11050000116229,
+  "protein": 0.403000003099442,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c26e44cf2f1338307a2e"
+  },
+  "name": "Appelsiini",
+  "id": 28924,
+  "energyKcal": 32.87457510735702,
+  "carbohydrate": 6.4079997253418,
+  "fat": 0.100800000429153,
+  "protein": 0.403200001716614,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c27644cf2f1338307a30"
+  },
+  "name": "Ananas",
+  "id": 28923,
+  "energyKcal": 29.464140279652153,
+  "carbohydrate": 5.93599989891052,
+  "fat": 0.212000003159046,
+  "protein": 0.265,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c27e44cf2f1338307a32"
+  },
+  "name": "Persikka/nektariini",
+  "id": 28922,
+  "energyKcal": 38.3090573185587,
+  "carbohydrate": 6.78600016593933,
+  "fat": 0.187050003111362,
+  "protein": 1.00049997925758,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c28744cf2f1338307a34"
+  },
+  "name": "Aprikoosi",
+  "id": 28921,
+  "energyKcal": 50.05244936248841,
+  "carbohydrate": 9.96400035858154,
+  "fat": 0.0940000014007091,
+  "protein": 0.996399946212769,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c28e44cf2f1338307a36"
+  },
+  "name": "Kirsikka",
+  "id": 28920,
+  "energyKcal": 51.3263645342539,
+  "carbohydrate": 10.3739996528625,
+  "fat": 0.182000002712011,
+  "protein": 0.800799995660782,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c29744cf2f1338307a38"
+  },
+  "name": "Luumu",
+  "id": 28918,
+  "energyKcal": 42.76028208933322,
+  "carbohydrate": 7.72799964904785,
+  "fat": 0.276000010967255,
+  "protein": 0.69,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c2a144cf2f1338307a3a"
+  },
+  "name": "Päärynä",
+  "id": 28917,
+  "energyKcal": 38.03301664537698,
+  "carbohydrate": 7.04,
+  "fat": 0.0769999986886978,
+  "protein": 0.272800002098083,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356c8ae44cf2f1338307a42"
+  },
+  "name": "Granaattiomena",
+  "id": 31555,
+  "energyKcal": 84.47130454686463,
+  "carbohydrate": 14.6999998092651,
+  "fat": 1.16999995708466,
+  "protein": 1.66999995708466,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d1c43bc496fa21885f03"
+  },
+  "name": "Chili",
+  "id": 31557,
+  "energyKcal": 45.085766453414635,
+  "carbohydrate": 7.96000003814697,
+  "fat": 0.200000002980232,
+  "protein": 2,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d426123ddcd1bd9d856d"
+  },
+  "name": "Passionhedelmä",
+  "id": 34680,
+  "energyKcal": 87.79683692484112,
+  "carbohydrate": 13,
+  "fat": 0.699999988079071,
+  "protein": 2.20000004768372,
+  "vegType": "fruit",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d4a3123ddcd1bd9d856f"
+  },
+  "name": "Inkivääri",
+  "id": 33023,
+  "energyKcal": 81.8911555208794,
+  "carbohydrate": 15.7700004577637,
+  "fat": 0.75,
+  "protein": 1.82000005245209,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d4b3123ddcd1bd9d8571"
+  },
+  "name": "Latva-artisokka",
+  "id": 32456,
+  "energyKcal": 30.20689054455683,
+  "carbohydrate": 1.29999995231628,
+  "fat": 0.150000005960464,
+  "protein": 3.26999998092651,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d4d9123ddcd1bd9d8573"
+  },
+  "name": "Piparjuuri",
+  "id": 11589,
+  "energyKcal": 89.64594348377251,
+  "carbohydrate": 14.0611639022827,
+  "fat": 0.254247754812241,
+  "protein": 3.92928338050842,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d575123ddcd1bd9d8575"
+  },
+  "name": "Paprika",
+  "id": 386,
+  "energyKcal": 28.37689301430957,
+  "carbohydrate": 4.5,
+  "fat": 0.300000011920929,
+  "protein": 0.939999997615814,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d582123ddcd1bd9d8577"
+  },
+  "name": "Kesäkurpitsa",
+  "id": 389,
+  "energyKcal": 18.41225087075928,
+  "carbohydrate": 2.5,
+  "fat": 0.400000005960464,
+  "protein": 0.650000035762787,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d591123ddcd1bd9d8579"
+  },
+  "name": "Munakoiso",
+  "id": 362,
+  "energyKcal": 22.354149671466434,
+  "carbohydrate": 3.09999990463257,
+  "fat": 0.200000002980232,
+  "protein": 0.5,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d59f123ddcd1bd9d857b"
+  },
+  "name": "Tomaatti",
+  "id": 352,
+  "energyKcal": 22.722060444921304,
+  "carbohydrate": 3.45000004768372,
+  "fat": 0.300000011920929,
+  "protein": 0.550000011920929,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d5a4123ddcd1bd9d857d"
+  },
+  "name": "Kurpitsa",
+  "id": 350,
+  "energyKcal": 15.875100804683022,
+  "carbohydrate": 2,
+  "fat": 0.100000001490116,
+  "protein": 0.75,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d5a9123ddcd1bd9d857f"
+  },
+  "name": "Kurkku",
+  "id": 346,
+  "energyKcal": 11.292942915993047,
+  "carbohydrate": 1.39999997615814,
+  "fat": 0.100000001490116,
+  "protein": 0.649999976158142,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d5b6123ddcd1bd9d8581"
+  },
+  "name": "Lehtiselleri",
+  "id": 339,
+  "energyKcal": 12.695303022038415,
+  "carbohydrate": 1.10000002384186,
+  "fat": 0.200000002980232,
+  "protein": 1.12000000476837,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d5c0123ddcd1bd9d8583"
+  },
+  "name": "Sipuli",
+  "id": 335,
+  "energyKcal": 29.356394776008884,
+  "carbohydrate": 4.80000019073486,
+  "fat": 0.100000001490116,
+  "protein": 1.25,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d5cc123ddcd1bd9d8585"
+  },
+  "name": "Jäävuorisalaatti",
+  "id": 331,
+  "energyKcal": 13.014238251737087,
+  "carbohydrate": 0.980000019073486,
+  "fat": 0.200000002980232,
+  "protein": 1.12000000476837,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d5e3123ddcd1bd9d8587"
+  },
+  "name": "Lehtikaali",
+  "id": 326,
+  "energyKcal": 38.328395422283435,
+  "carbohydrate": 1.75,
+  "fat": 0.819999992847443,
+  "protein": 2.70000004768372,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d5ea123ddcd1bd9d8589"
+  },
+  "name": "Parsakaali",
+  "id": 324,
+  "energyKcal": 34.80577247871518,
+  "carbohydrate": 1.63999998569489,
+  "fat": 0.529999971389771,
+  "protein": 3.90000009536743,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d5f3123ddcd1bd9d858b"
+  },
+  "name": "Kukkakaali",
+  "id": 322,
+  "energyKcal": 24.44216101070142,
+  "carbohydrate": 2.34999990463257,
+  "fat": 0.209999993443489,
+  "protein": 2,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d600123ddcd1bd9d858d"
+  },
+  "name": "Mustajuuri",
+  "id": 312,
+  "energyKcal": 62.94209295602107,
+  "carbohydrate": 10.5,
+  "fat": 0.400000005960464,
+  "protein": 0.5,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d607123ddcd1bd9d858f"
+  },
+  "name": "Juuriselleri",
+  "id": 311,
+  "energyKcal": 22.468823893104734,
+  "carbohydrate": 2.65000009536743,
+  "fat": 0.100000001490116,
+  "protein": 1.29999995231628,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d60f123ddcd1bd9d8591"
+  },
+  "name": "Maa-artisokka",
+  "id": 310,
+  "energyKcal": 52.136509558264606,
+  "carbohydrate": 2.90999984741211,
+  "fat": 0.100000001490116,
+  "protein": 1.79999995231628,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d613123ddcd1bd9d8593"
+  },
+  "name": "Palsternakka",
+  "id": 309,
+  "energyKcal": 63.76319793026039,
+  "carbohydrate": 10.3100004196167,
+  "fat": 0.569999992847443,
+  "protein": 1.10000002384186,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d61a123ddcd1bd9d8595"
+  },
+  "name": "Retiisi",
+  "id": 308,
+  "energyKcal": 12.131491896243704,
+  "carbohydrate": 1.52999997138977,
+  "fat": 0.109999999403954,
+  "protein": 0.699999988079071,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d61f123ddcd1bd9d8597"
+  },
+  "name": "Punajuuri",
+  "id": 305,
+  "energyKcal": 44.459841870972326,
+  "carbohydrate": 8,
+  "fat": 0.100000001490116,
+  "protein": 1.39999997615814,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d629123ddcd1bd9d8599"
+  },
+  "name": "Nauris",
+  "id": 304,
+  "energyKcal": 21.15246808627438,
+  "carbohydrate": 2.51999998092651,
+  "fat": 0.100000001490116,
+  "protein": 1.20000004768372,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d630123ddcd1bd9d859b"
+  },
+  "name": "Lanttu",
+  "id": 303,
+  "energyKcal": 34.77471392770653,
+  "carbohydrate": 5.88000011444092,
+  "fat": 0.100000001490116,
+  "protein": 1.10000002384186,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d64c123ddcd1bd9d859d"
+  },
+  "name": "Porkkana",
+  "id": 300,
+  "energyKcal": 32.69267552694897,
+  "carbohydrate": 5.55999994277954,
+  "fat": 0.200000002980232,
+  "protein": 0.625,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d67f123ddcd1bd9d859f"
+  },
+  "name": "Peruna",
+  "id": 204,
+  "energyKcal": 74.56590877658536,
+  "carbohydrate": 15.5,
+  "fat": 0.114000000059605,
+  "protein": 1.69000005722046,
+  "vegType": "root",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6356d69a123ddcd1bd9d85a1"
+  },
+  "name": "Herne",
+  "id": 370,
+  "energyKcal": 75.15425688675116,
+  "carbohydrate": 9.49544143676758,
+  "fat": 0.787220299243927,
+  "protein": 5.62300205230713,
+  "vegType": "vegetable",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63593370b396a826742d242c"
+  },
+  "carbohydrate": 8.99569951019237,
+  "energyKcal": 246.723564640021,
+  "fat": 18.6086027087986,
+  "id": 30572,
+  "name": "Grillimakkara",
+  "protein": 11.1720438726871,
+  "vegType": "boss"
+}]

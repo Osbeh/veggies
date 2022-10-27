@@ -7,9 +7,6 @@ get http://localhost:4000/roots
 
 get http://localhost:4000/vegetables
 
-###
-
-GET http://localhost:4000/boss
 
 ####
 GET http://localhost:4000/fruits/30572
