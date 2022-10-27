@@ -5,8 +5,11 @@
     "json-server": "^0.17.0"
   },
   "scripts": {
-    "start": "",
-    "server": "cd ./server && nodemon server.js",
+    "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+    "server": "cd ./server && npm start",
     "client": "cd ./client && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^7.5.0"
   }
 }
