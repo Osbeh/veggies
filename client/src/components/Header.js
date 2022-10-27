@@ -15,7 +15,7 @@ export default function Header({ vegType, onTypeChange, onAdmin }) {
             <h1>Vimmaiset Vihannekset</h1>
             <div className='controlDiv'>
             {vegType && <Button color={'#35494f'} text={'Vaihda vihannestyyppi'} onClick={typeChangeClick}/>}
-            <Button color={'#35494f'} text={'admin'} onClick={adminClick}></Button>
+            {/* <Button color={'#35494f'} text={'admin'} onClick={adminClick}></Button> */}
             </div>
         </header>
     )
