@@ -43,7 +43,8 @@ function App() {
   const fetchVeggies = async (vegType) => {
     //const res = await fetch('http://localhost:5000/veggies')
     try {
-      const res = await fetch(`http://localhost:4000/${vegType}`)
+      //const res = await fetch(`http://localhost:4000/${vegType}`)
+      const res = await fetch(`/${vegType}`)
       const data = await res.json()
       return data
     } catch (err) {
