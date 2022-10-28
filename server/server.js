@@ -63,7 +63,7 @@ app.get('/addveg', async (req, res, next) => {
         vegType: req.query.type
     }
      try {
-    const postToMongo = await fetch(`http://localhost:4000/${req.query.type}`, {
+    const postToMongo = await fetch(`/${req.query.type}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
