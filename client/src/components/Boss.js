@@ -19,7 +19,7 @@ export default function Boss({ setBossEnemy }) {
 
     const fetchBoss = async () => {
         try {
-          const res = await fetch(`http://localhost:4000/fruits/30572`)
+          const res = await fetch(`/fruits/30572`)
           const data = await res.json()
           return data
         } catch (err) {
@@ -27,8 +27,6 @@ export default function Boss({ setBossEnemy }) {
           return
         }
       }
-
-    console.log(boss)
 
     return (
         <div className="finalBattlePrep">

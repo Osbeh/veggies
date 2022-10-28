@@ -4,8 +4,6 @@ import AddVeggie from "./AddVeggie"
 
 export default function SelectVegType({ onTypeSelect, onAdmin, admin }) {
 
-    // const [vegType, setVegType] = useState('')
-
     const onClick = (text) => {
         onTypeSelect(text)
     }

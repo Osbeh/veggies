@@ -75,6 +75,10 @@ progress {
 }
 
 progress::-webkit-progress-bar {
+  background-color: white;
+}
+
+progress::-webkit-progress-value {
   background-color: red;
 }
 
@@ -116,7 +120,7 @@ progress::-moz-progress-bar {
 
 .actionLog {
   max-height: 25rem;
-  overflow: scroll;
+  overflow: auto;
   float: right;
   min-width: 25rem;
   max-width: 35rem;

@@ -12,7 +12,10 @@ export default function Game({ veggies, vegSelected, player, onSelect, enemySele
     
     if (!vegSelected) {
         return (
-            <Cards veggies={veggies} onSelect={onSelect}/>
+            <>
+            <p style={{color:'white', textAlign:'center'}}>Valitse hahmosi tuplaklikkaamalla</p>
+                <Cards veggies={veggies} onSelect={onSelect}/>
+            </>
         )
     } else {
         if (!enemySelected) {

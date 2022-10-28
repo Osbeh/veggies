@@ -19,7 +19,6 @@ function App() {
   const [defeatedEnemies, setDefeatedEnemies] = useState([])
   const [loading, setLoading] = useState(true)
   const [err, setErr] = useState(false)
-  // const [gameFinished, setGameFinished] = useState(false)
 
   useEffect(() => {
     const getVeggies = async () => {
@@ -41,7 +40,6 @@ function App() {
   }, [vegType])
 
   const fetchVeggies = async (vegType) => {
-    //const res = await fetch('http://localhost:5000/veggies')
     try {
       const res = await fetch(`http://localhost:4000/${vegType}`)
       const data = await res.json()
@@ -154,6 +152,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App;

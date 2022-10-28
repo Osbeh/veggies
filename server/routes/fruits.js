@@ -1,4 +1,3 @@
-// import express from "express";
 const express = require('express')
 const { collection } = require('../models/veg')
 const router = express.Router()
@@ -46,4 +45,3 @@ router.post('/', async (req,res) => {
 
 
 module.exports = router
-// export default router;

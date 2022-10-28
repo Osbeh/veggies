@@ -33,7 +33,6 @@ app.use('/roots', rootsRouter)
 const fineliFetch = async (vegId) => {
     console.log(vegId)
     if (!vegId) return res.status(500).json({message: 'error no vegId'})
-    // try {
         const res = await fetch(`https://fineli.fi/fineli/api/v1/foods/${vegId}`);
         if (!res.ok) {
             return({status:res.status})

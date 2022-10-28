@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 export default function AddTask() {
-    //const [vegType, setVegType] = useState('')
     const [vegId, setVegId] = useState('')
 
     const options = [
@@ -14,7 +13,6 @@ export default function AddTask() {
     const [vegType, setVegType] = useState(options[0].value);
 
     const handleChange = event => {
-        // console.log(event.target.value);
         setVegType(event.target.value);
     };
 
@@ -44,7 +42,6 @@ export default function AddTask() {
     return (
         <form className="add-form" onSubmit={onSubmit}>
             <input type="text" placeholder="Fineli ID" value={vegId} onChange={(e) => setVegId(e.target.value)}/>
-            {/* <input type="text" placeholder="Veggie type" value={vegType} onChange={(e) => setVegType(e.target.value)}/> */}
             <select value={vegType} onChange={handleChange}>
                 {options.map(option => (
                 <option key={option.value} value={option.value}>
