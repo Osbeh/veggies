@@ -9,15 +9,15 @@ Datat on haettu Finelin API:n kautta. Admin pystyy lisäämään tietokantaan vi
 
 Lokaali asennus: 
 
-Lokaalissa asennuksessa täytyy löytyä Mongo-palvelin ja sieltä kanta "veggies" ja collection "vegs", joka sisältää server\data\vegs.json - datat.
+    npm run install-all
+    npm start
+
+
+Lokaalissa asennuksessa täytyy löytyä Mongo-palvelin joko lokaalisti tai pilvestä ja sieltä kanta "veggies" ja collection "vegs", joka sisältää server\data\vegs.json - datat. Myös tyhjä kanta käy, mutta silloin täytyy vihannekset lisätä admin-lomakkeen kautta manuaalisesti.
+
 Serverin .env -tiedostoon tulee määritellä MONGODB_URI, jossa on Mongon connection string.
 
-cd client
-npm install
 
-cd server
-npm install
 
-npm start
 
 
