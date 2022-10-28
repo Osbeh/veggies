@@ -2,7 +2,7 @@
 koodihaaste
 
 Haaste on toteutettu tajunnanvirtana ilman suurempaa suunnitelmaa alussa. Testattu toimivaksi Windows-koneella Firefoxilla ja Chromella.
-Jatkokehitysideoita olisi vielä paljon, mutta aika on rajallista.
+Jatkokehityksenä ulkoasussa olisi vielä hiomista, mutta muu elämä ajaa kovaa päälle.
 
 Front-end on toteutettu Reactilla
 Back-end on toteutettu Node + Express + Mongoose combolla
