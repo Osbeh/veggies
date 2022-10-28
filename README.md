@@ -4,8 +4,8 @@ koodihaaste
 Haaste on toteutettu tajunnanvirtana ilman suurempaa suunnitelmaa alussa. Testattu toimivaksi Windows-koneella Firefoxilla ja Chromella.
 Jatkokehityksenä ulkoasussa olisi vielä hiomista, mutta muu elämä ajaa kovaa päälle.
 
-Front-end on toteutettu Reactilla
-Back-end on toteutettu Node + Express + Mongoose combolla
+Front-end on toteutettu Reactilla.
+Back-end on toteutettu Node + Express + Mongoose combolla.
 Tietokantana toimii MongoDB - Itsellä käytössä lähinnä Atlas Herokua varten, mutta myös lokaalia pyöritetty alkuvaiheessa.
 
 Main-branch sisältää lokaalissa toimivan kehitysversion ja heroku-branch on deployattu Herokuun.
